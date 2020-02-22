@@ -13,23 +13,43 @@ export default [
     //一级路由
     {
         path: '/home',
-        component: Home
+        component: Home,
+        meta:{
+            isShowFooter: true,
+            isShowHeader: true
+        }
     },
     {
         path: '/class',
-        component: Class
+        component: Class,
+        meta:{
+            isShowFooter: true,
+            isShowHeader: true
+        }
     },
     {
         path: '/money',
-        component: Money
+        component: Money,
+        meta:{
+            isShowFooter: true,
+            isShowHeader: true
+        }
     },
     {
         path: '/shop',
-        component: Shop
+        component: Shop,
+        meta:{
+            isShowFooter: true,
+            isShowHeader: true
+        }
     },
     {
         path: '/person',
-        component: Person
+        component: Person,
+        meta:{
+            isShowFooter: false,
+            isShowHeader: false
+        }
     },
     //重定向
     {

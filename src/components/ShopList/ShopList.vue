@@ -1,52 +1,25 @@
 <template>
-  <div id="listContainer">
+  <div id="listContainer" v-if="kingKongLists.kingKongModule">
       <ul class="content">
-          <li class="list">
-              <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-              <span>新品首发</span>
+          <li class="list" v-for="(item, index) in kingKongLists.kingKongModule.kingKongList" :key="index">
+              <img :src="item.picUrl" alt="">
+              <span>{{item.text}}</span>
           </li>
-          <li class="list">
-              <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-              <span>新品首发</span>
-          </li>
-          <li class="list">
-              <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-              <span>新品首发</span>
-          </li>
-          <li class="list">
-              <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-              <span>新品首发</span>
-          </li>
-          <li class="list">
-              <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-              <span>新品首发</span>
-          </li>
-          <li class="list">
-              <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-              <span>新品首发</span>
-          </li>
-           <li class="list">
-              <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-              <span>新品首发</span>
-          </li>
-           <li class="list">
-              <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-              <span>新品首发</span>
-          </li>
-           <li class="list">
-              <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-              <span>新品首发</span>
-          </li>
-           <li class="list">
-              <img src="https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png" alt="">
-              <span>新品首发</span>
-          </li>
+          
       </ul>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+
   export default {
+    props:{
+      kingKongLists:{
+        required: true,
+        type: Object
+      }
+    },
+    
   }
 </script>
 
@@ -55,7 +28,6 @@
         width 750px
         height 341px
         padding 20px
-        // display flex
         box-sizing border-box
         .content
             .list
@@ -63,9 +35,12 @@
                 height 156px
                 float left
                 margin 0 16px 0 16px
+                color #333333
+                text-align center
                 img 
-                    width 110px
-                    height 110px
-
+                  width 110px
+                  height 110px
+                  margin-bottom 10px
+                
  
 </style>

@@ -14,53 +14,51 @@
         <li class="active">
           推荐
         </li>
-        <li class="active">
+        <li>
           居家生活
         </li>
-        <li class="active">
+        <li>
           服饰鞋包
         </li>
-        <li class="active">
+        <li>
           美食酒水
         </li>
-        <li class="active">
+        <li>
           个护清洁
         </li>
-        <li class="active">
+        <li >
           母婴亲子
         </li>
-        <li class="active">
+        <li>
           运动旅行
         </li>
-        <li class="active">
+        <li>
           数码家电
         </li>
-        <li class="active">
+        <li>
           全球特色
         </li>
       </ul>
     </div>
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <img class="swiper-slide" src="https://yanxuan.nosdn.127.net/f247ad2cb1d02624e72248c91af4a4b2.jpg?type=webp&imageView&quality=75&thumbnail=750x0" alt="">
-        <img class="swiper-slide" src="https://yanxuan.nosdn.127.net/f247ad2cb1d02624e72248c91af4a4b2.jpg?type=webp&imageView&quality=75&thumbnail=750x0" alt="">
-        <img class="swiper-slide" src="https://yanxuan.nosdn.127.net/f247ad2cb1d02624e72248c91af4a4b2.jpg?type=webp&imageView&quality=75&thumbnail=750x0" alt="">
-        <img class="swiper-slide" src="https://yanxuan.nosdn.127.net/f247ad2cb1d02624e72248c91af4a4b2.jpg?type=webp&imageView&quality=75&thumbnail=750x0" alt="">
-        <img class="swiper-slide" src="https://yanxuan.nosdn.127.net/f247ad2cb1d02624e72248c91af4a4b2.jpg?type=webp&imageView&quality=75&thumbnail=750x0" alt="">
-        <img class="swiper-slide" src="https://yanxuan.nosdn.127.net/f247ad2cb1d02624e72248c91af4a4b2.jpg?type=webp&imageView&quality=75&thumbnail=750x0" alt="">
-        <img class="swiper-slide" src="https://yanxuan.nosdn.127.net/f247ad2cb1d02624e72248c91af4a4b2.jpg?type=webp&imageView&quality=75&thumbnail=750x0" alt="">
-        <img class="swiper-slide" src="https://yanxuan.nosdn.127.net/f247ad2cb1d02624e72248c91af4a4b2.jpg?type=webp&imageView&quality=75&thumbnail=750x0" alt="">
+        <div class="swiper-slide" v-for="(focus, index) in kingKongLists.focusList" :key="index">
+          <img :src="focus.picUrl" alt="">
+        </div>
+        <div class="swiper-pagination"></div>
       </div>
       
     </div>
-    <div class="text">
-      <span>网易自营品牌</span>
-      <span>30天无忧退货</span>
-      <span>48小时快速退款</span>
+    <div class="text" v-for="(policy, index) in kingKongLists.policyDescList" :key="index">
+      <span>
+        <img :src="policy.icon" alt="">
+        {{policy.desc}} 
+      </span>
+      
     </div>
-    <ShopList/>
+    <ShopList :kingKongLists="kingKongLists"/>
     <ImageList/>
-    <PagesList/>
+    <PagesList :kingKongLists="kingKongLists"/>
   </div>
 </template>
 
@@ -75,7 +73,13 @@
   import Swiper from "swiper";
   //样式(只能在这引入)
   import "swiper/css/swiper.min.css";
+
+
+  import {mapState} from 'vuex'
+  import {getkingKongList} from '../../api/index'
   export default {
+    
+    
     components:{
       ShopList,
       ImageList,
@@ -83,26 +87,26 @@
     },
     // data(){
     //   return{
-       
     //   }
     // },
     mounted(){
+      this.$store.dispatch("getkingKongListAction");
       new BScroll(".nav",{
         scrollX: true,
         probeType: 3
       }),
       new Swiper(".swiper-container", {
         autoplay: true,
-        speed: 300,
+        speed: 500,
         loop: true
       })
     },
-    // computed:{
-
-    // },
-    // methods:{
-      
-    // }
+    computed: {
+          ...mapState({
+              kingKongLists: state => state.kingKongList
+          })
+    },
+    
   }
 </script>
 
@@ -154,6 +158,7 @@
           height 47px
           text-align center
           font-size 26px
+          color #333
           &.active
             color red
             border-bottom: 1px solid red
@@ -164,16 +169,27 @@
       .swiper-wrapper
         width 800%
         height 370px
-        img 
+        .swiper-slide
+          width 750px
           height 370px
+          img 
+            width 750px
+            height 370px
     .text
-      margin 20px 0 10px 0
+      display inline-block
+      margin 20px 0 10px 40px
       span 
-        width 33%
-        height 32px
-        margin-left 1rem
         line-height 32px
-
+        vertical-align middle
+        height 32px
+        width 33%
+        // margin-left 1rem
+        line-height 32px
+        img 
+          vertical-align middle
+          width 32px
+          height 32px
+        
 
 
 </style>

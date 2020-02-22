@@ -1,6 +1,9 @@
 <template>
   <div id="imageContainer">
     <div class="im1">
+      <div class="im10">
+        <img src="https://yanxuan-item.nosdn.127.net/901be61b95ed8dfc89947125cbdc603b.png?imageView&thumbnail=168x0&quality=75" alt="">
+      </div>
       <img
         src="https://yanxuan.nosdn.127.net/5db28c137605ea7576c986e9c285e1c6.png?quality=75&type=webp&imageView&thumbnail=750x0"
         alt
@@ -40,48 +43,12 @@
 </template>
 
 <script type="text/ecmascript-6">
-export default {};
+export default {
+
+};
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-// #imageContainer
-// width 100%
-// height 240px
-// background-color red
-// .im1
-// img
-// width 750px
-// height 240px
-// .im2
-// img
-// width 710px
-// height 160px
-// margin-left 20px
-// .im3
-// img
-// width 351px
-// height 186px
-// margin-left 20px
-// float left
-// .im4
-// img
-// width 351px
-// height 186px
-// float right
-// margin-right 20px
-// .im5
-// img
-// width 351px
-// height 186px
-// margin-left 20px
-// float left
-// .im6
-// img
-// width 351px
-// height 186px
-// float right
-// margin-right 20px
-
 
 #imageContainer {
   width: 100%;
@@ -89,6 +56,19 @@ export default {};
   float left
   padding-bottom 20px
   .im1 {
+    position relative
+    .im10{
+      position absolute
+      left 77px
+      top 33px
+      background-color rgba(0, 0, 0, 0)
+      border-radius 10px
+      img{
+        width 166px
+        height 166px
+        
+      }
+    }
     img {
       width: 750px;
       height: 240px;

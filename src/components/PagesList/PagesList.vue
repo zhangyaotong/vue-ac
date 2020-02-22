@@ -1,53 +1,69 @@
 <template>
-  <div id="pagesListContainer">
+  <div id="pagesListContainer" v-if="kingKongLists.categoryHotSellModule">
       <div class="page1">
           <div class="p10">
               新人专享礼
           </div>
           <div class="p11">
+              <span>新人专享礼包</span>
               <img src="//yanxuan.nosdn.127.net/ba4d635ec94ad95b28bfab6500900659.png" alt="">
           </div>
           <div class="p12">
-              <img src="https://yanxuan-item.nosdn.127.net/0fd9f9e40f287ecfe3b54aaafda914f6.png?quality=75&type=webp&imageView&thumbnail=200x200" alt="">
+              <p>{{kingKongLists.indexActivityModule[0].title}}</p>
+              <span>{{kingKongLists.indexActivityModule[0].subTitle}}</span>
+              <img :src="kingKongLists.indexActivityModule[0].showPicUrl" alt="">
           </div>
           <div class="p13">
+              <p>{{kingKongLists.indexActivityModule[1].title}}</p>
+              <span>{{kingKongLists.indexActivityModule[1].tag}}</span>
           </div>
       </div>
       <div class="page2">
           <div class="p20">
-              类目热销榜
+              {{kingKongLists.categoryHotSellModule.title}}
           </div>
           <div class="p21">
-              <img src="https://yanxuan-item.nosdn.127.net/487de4b51822cf85b859bb94cd65e9a6.png?quality=75&type=webp&imageView&thumbnail=200x200" alt="">
+              <span>{{kingKongLists.categoryHotSellModule.categoryList[0].categoryName}}</span>
+              <img :src="kingKongLists.categoryHotSellModule.categoryList[0].showPicUrl" alt="">
           </div>
           <div class="p22">
-              <img src="https://yanxuan-item.nosdn.127.net/487de4b51822cf85b859bb94cd65e9a6.png?quality=75&type=webp&imageView&thumbnail=200x200" alt="">
+              <span>{{kingKongLists.categoryHotSellModule.categoryList[1].categoryName}}</span>
+              <img :src="kingKongLists.categoryHotSellModule.categoryList[1].showPicUrl" alt="">
           </div>
           <div class="p23">
               <div class="p231">
-                  <img src="https://yanxuan-item.nosdn.127.net/a4c5c5c63d8e3595f15a95819b2cf758.png?quality=75&type=webp&imageView&thumbnail=200x200" alt="">
+                <span>{{kingKongLists.categoryHotSellModule.categoryList[2].categoryName}}</span>
+                <img :src="kingKongLists.categoryHotSellModule.categoryList[2].showPicUrl" alt="">
               </div>
               <div class="p231">
-                  <img src="https://yanxuan-item.nosdn.127.net/a4c5c5c63d8e3595f15a95819b2cf758.png?quality=75&type=webp&imageView&thumbnail=200x200" alt="">
+                <span>{{kingKongLists.categoryHotSellModule.categoryList[3].categoryName}}</span>
+                <img :src="kingKongLists.categoryHotSellModule.categoryList[3].showPicUrl" alt="">
               </div>
               <div class="p231">
-                  <img src="https://yanxuan-item.nosdn.127.net/a4c5c5c63d8e3595f15a95819b2cf758.png?quality=75&type=webp&imageView&thumbnail=200x200" alt="">
+                <span>{{kingKongLists.categoryHotSellModule.categoryList[4].categoryName}}</span>
+                <img :src="kingKongLists.categoryHotSellModule.categoryList[4].showPicUrl" alt="">
               </div>
-              <div class="p231" style="border-right:none">
-                  <img src="https://yanxuan-item.nosdn.127.net/a4c5c5c63d8e3595f15a95819b2cf758.png?quality=75&type=webp&imageView&thumbnail=200x200" alt="">
-              </div>
-              <div class="p231">
-                  <img src="https://yanxuan-item.nosdn.127.net/a4c5c5c63d8e3595f15a95819b2cf758.png?quality=75&type=webp&imageView&thumbnail=200x200" alt="">
-              </div>
-              <div class="p231">
-                  <img src="https://yanxuan-item.nosdn.127.net/a4c5c5c63d8e3595f15a95819b2cf758.png?quality=75&type=webp&imageView&thumbnail=200x200" alt="">
+              <div class="p231" style="margin-right:0">
+                <span>{{kingKongLists.categoryHotSellModule.categoryList[5].categoryName}}</span>
+                <img :src="kingKongLists.categoryHotSellModule.categoryList[5].showPicUrl" alt="">
               </div>
               <div class="p231">
-                  <img src="https://yanxuan-item.nosdn.127.net/a4c5c5c63d8e3595f15a95819b2cf758.png?quality=75&type=webp&imageView&thumbnail=200x200" alt="">
+                <span>{{kingKongLists.categoryHotSellModule.categoryList[6].categoryName}}</span>
+                <img :src="kingKongLists.categoryHotSellModule.categoryList[6].showPicUrl" alt="">
               </div>
-              <div class="p231" style="border-right:none">
-                  <img src="https://yanxuan-item.nosdn.127.net/a4c5c5c63d8e3595f15a95819b2cf758.png?quality=75&type=webp&imageView&thumbnail=200x200" alt="">
+              <div class="p231">
+                <span>{{kingKongLists.categoryHotSellModule.categoryList[7].categoryName}}</span>
+                <img :src="kingKongLists.categoryHotSellModule.categoryList[7].showPicUrl" alt="">
               </div>
+              <div class="p231">
+                <span>{{kingKongLists.categoryHotSellModule.categoryList[8].categoryName}}</span>
+                <img :src="kingKongLists.categoryHotSellModule.categoryList[8].showPicUrl" alt="">
+              </div>
+              <div class="p231" style="margin-right:0">
+                <span>{{kingKongLists.categoryHotSellModule.categoryList[9].categoryName}}</span>
+                <img :src="kingKongLists.categoryHotSellModule.categoryList[9].showPicUrl" alt="">
+              </div>
+              
           </div>
       </div>
       <div class="page3">
@@ -175,6 +191,13 @@
 
 <script type="text/ecmascript-6">
   export default {
+      props:{
+          kingKongLists:{
+            required: true,
+            type: Object
+          }
+      }
+
   }
 </script>
 
@@ -183,7 +206,7 @@
         width 100%
         background-color rgb(238, 238, 238)
         float left
-        
+        color #333
         .page1
             width 750px
             height 558px
@@ -195,6 +218,7 @@
                 height 90px
                 line-height 90px
                 font-size 32px
+                
             .p11
                 display inline-block
                 float left
@@ -203,10 +227,17 @@
                 margin-left 30px
                 background-color rgb(249, 233, 207)
                 text-align center
+                position relative
+                
+                span 
+                    font-size 32px
+                    position absolute
+                    left 30px
+                    top 40px
                 img 
                     width 258px
                     height 257px
-                    margin-top 88px
+                    margin-top 120px
             .p12
                 width 343px
                 height 215px
@@ -214,7 +245,21 @@
                 margin-right 30px
                 margin-bottom 4px
                 background-color rgb(251, 226, 211)
+                position relative
+                p
+                    // display block
+                    width 313px
+                    height 48px
+                    color #333
+                    font-size 32px
+                    margin 30px 0 0 30px
+                span
+                    margin 0 0 0 30px
+                    color #7f7f7f
                 img 
+                    position absolute
+                    right 0
+                    top 15px
                     width 200px
                     height 200px
                     margin-left 143px
@@ -224,7 +269,16 @@
                 float right  
                 margin-right 30px
                 background-color rgb(255, 236, 194)
-                
+                p
+                    // display block
+                    width 313px
+                    height 48px
+                    color #333
+                    font-size 32px
+                    margin 30px 0 0 30px
+                span
+                    margin 0 0 0 30px
+                    color #7f7f7f
 
 
         .page2
@@ -245,10 +299,16 @@
                 height 200px
                 background-color rgb(249, 243, 228)
                 float left
+                position relative
+                span
+                    display inline
+                    font-size 30px
+                    float left
+                    margin 80px 0 0 20px
                 img 
+                    position absolute
                     width 200px
                     height 200px
-                    margin-left 143px
                     
                     
             .p22
@@ -257,14 +317,20 @@
                 background-color rgb(235, 239, 246)
                 float right
                 margin-bottom 10px 
+                position relative
+                span
+                    display inline
+                    font-size 30px
+                    float left
+                    margin 80px 0 0 20px
                 img 
+                    position absolute
                     width 200px
                     height 200px
-                    margin-left 143px
             .p23
                 width 690px
                 height 360px
-                background-color rgb(245, 245, 245)
+                
                 // float left
                 
                 display flex
@@ -273,12 +339,20 @@
                 .p231
                     width 165px
                     height 180px
-                    border-right 10px solid #fff
-                    border-bottom  10px solid #fff
+                    background-color rgb(245, 245, 245)
+                    margin-right 10px 
+                    margin-bottom  10px
+                    text-align center
+                    box-sizing border-box
+                    padding-top 20px
+                    span
+                        width 165px
+                        height 36px
                     img 
                         width 120px
                         height 120px
-                        margin-top 36px
+                        margin 0 auto
+                        margin-top 6px
 
         .page3
             width 750px

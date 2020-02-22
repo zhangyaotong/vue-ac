@@ -1,10 +1,10 @@
 // 项目根组件
 <template>
   <div>
-      <HeaderImage/>
+      <HeaderImage v-show="$route.meta.isShowHeader"/>
       <!-- 显示页面内容 -->
       <router-view></router-view>
-    <Nav/>
+      <Nav v-show="$route.meta.isShowFooter"/>
   </div>
 </template>
 
