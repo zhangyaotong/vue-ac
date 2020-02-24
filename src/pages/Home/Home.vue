@@ -45,7 +45,7 @@
         <div class="swiper-slide" v-for="(focus, index) in kingKongLists.focusList" :key="index">
           <img :src="focus.picUrl" alt="">
         </div>
-        <div class="swiper-pagination"></div>
+        <!-- <div class="swiper-pagination"></div> -->
       </div>
       
     </div>
@@ -94,19 +94,32 @@
       new BScroll(".nav",{
         scrollX: true,
         probeType: 3
-      }),
-      new Swiper(".swiper-container", {
-        autoplay: true,
-        speed: 500,
-        loop: true
       })
+      // new Swiper(".swiper-container", {
+      //   autoplay: true,
+      //   // speed: 500,
+      //   loop: true
+      // })
     },
     computed: {
           ...mapState({
               kingKongLists: state => state.kingKongList
           })
     },
-    
+    watch: {
+      kingKongLists(){
+        this.$nextTick(() => {
+          new Swiper(".swiper-container", {
+            pagination: {
+              el: '.swiper-pagination',
+            },
+            autoplay: true,
+            // speed: 500,
+            loop: true
+          })
+        })
+      }
+    }
   }
 </script>
 

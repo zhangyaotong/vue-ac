@@ -16,3 +16,18 @@ export const getcategory = () => ajax({
 export const getcatelists = () => ajax({
     url:'/cateLists'
 })
+
+//值得买
+export const getnav = () => ajax({
+    url: '/nav'
+})
+
+//瀑布流
+export const getpubu = () => ajax({
+    url: '/pubu'
+})
+
+//懒加载
+export const getljz = () => ajax({
+    url: '/ljz'
+})

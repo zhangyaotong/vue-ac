@@ -17,4 +17,5 @@
             img 
                 width 100%
                 height 104px
+                display block
 </style>

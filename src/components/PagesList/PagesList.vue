@@ -8,63 +8,32 @@
               <span>新人专享礼包</span>
               <img src="//yanxuan.nosdn.127.net/ba4d635ec94ad95b28bfab6500900659.png" alt="">
           </div>
-          <div class="p12">
-              <p>{{kingKongLists.indexActivityModule[0].title}}</p>
-              <span>{{kingKongLists.indexActivityModule[0].subTitle}}</span>
-              <img :src="kingKongLists.indexActivityModule[0].showPicUrl" alt="">
+          <div class="p12" v-for="(p, index) in kingKongLists.indexActivityModule" :key="index">
+              <p>{{p.title}}</p>
+              <span>{{p.subTitle}}</span>
+              <img :src="p.showPicUrl" alt="">
           </div>
-          <div class="p13">
-              <p>{{kingKongLists.indexActivityModule[1].title}}</p>
-              <span>{{kingKongLists.indexActivityModule[1].tag}}</span>
-          </div>
+          
       </div>
       <div class="page2">
           <div class="p20">
-              {{kingKongLists.categoryHotSellModule.title}}
+              类目热销榜
           </div>
-          <div class="p21">
+          <!-- <div class="p21">
               <span>{{kingKongLists.categoryHotSellModule.categoryList[0].categoryName}}</span>
               <img :src="kingKongLists.categoryHotSellModule.categoryList[0].showPicUrl" alt="">
-          </div>
+          </div> 
           <div class="p22">
               <span>{{kingKongLists.categoryHotSellModule.categoryList[1].categoryName}}</span>
               <img :src="kingKongLists.categoryHotSellModule.categoryList[1].showPicUrl" alt="">
-          </div>
+          </div> -->
           <div class="p23">
-              <div class="p231">
-                <span>{{kingKongLists.categoryHotSellModule.categoryList[2].categoryName}}</span>
-                <img :src="kingKongLists.categoryHotSellModule.categoryList[2].showPicUrl" alt="">
+              <div class="p231" v-for="(king, index) in kingKongLists.categoryHotSellModule.categoryList" :key="index">
+                <span>{{king.categoryName}}</span>
+                <img :src="king.showPicUrl" alt="">
               </div>
-              <div class="p231">
-                <span>{{kingKongLists.categoryHotSellModule.categoryList[3].categoryName}}</span>
-                <img :src="kingKongLists.categoryHotSellModule.categoryList[3].showPicUrl" alt="">
-              </div>
-              <div class="p231">
-                <span>{{kingKongLists.categoryHotSellModule.categoryList[4].categoryName}}</span>
-                <img :src="kingKongLists.categoryHotSellModule.categoryList[4].showPicUrl" alt="">
-              </div>
-              <div class="p231" style="margin-right:0">
-                <span>{{kingKongLists.categoryHotSellModule.categoryList[5].categoryName}}</span>
-                <img :src="kingKongLists.categoryHotSellModule.categoryList[5].showPicUrl" alt="">
-              </div>
-              <div class="p231">
-                <span>{{kingKongLists.categoryHotSellModule.categoryList[6].categoryName}}</span>
-                <img :src="kingKongLists.categoryHotSellModule.categoryList[6].showPicUrl" alt="">
-              </div>
-              <div class="p231">
-                <span>{{kingKongLists.categoryHotSellModule.categoryList[7].categoryName}}</span>
-                <img :src="kingKongLists.categoryHotSellModule.categoryList[7].showPicUrl" alt="">
-              </div>
-              <div class="p231">
-                <span>{{kingKongLists.categoryHotSellModule.categoryList[8].categoryName}}</span>
-                <img :src="kingKongLists.categoryHotSellModule.categoryList[8].showPicUrl" alt="">
-              </div>
-              <div class="p231" style="margin-right:0">
-                <span>{{kingKongLists.categoryHotSellModule.categoryList[9].categoryName}}</span>
-                <img :src="kingKongLists.categoryHotSellModule.categoryList[9].showPicUrl" alt="">
-              </div>
-              
           </div>
+          
       </div>
       <div class="page3">
           <div class="p30">
@@ -330,9 +299,7 @@
             .p23
                 width 690px
                 height 360px
-                
                 // float left
-                
                 display flex
                 flex-wrap wrap
                 text-align center
@@ -340,7 +307,7 @@
                     width 165px
                     height 180px
                     background-color rgb(245, 245, 245)
-                    margin-right 10px 
+                    margin-right 7px 
                     margin-bottom  10px
                     text-align center
                     box-sizing border-box

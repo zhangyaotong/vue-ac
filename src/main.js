@@ -5,18 +5,23 @@ import 'lib-flexible/flexible'
 //mint-ui
 import {Button} from 'mint-ui'
 import 'mint-ui/lib/style.css'
+
+
+
 import App from './App.vue'
 
 //路由器
 import router from './router/index'
 //vuex
 import store from './store/store'
+//瀑布流
+import waterfall from 'vue-waterfall2'
+Vue.use(waterfall)
 
 //注册全局组件,固定
 Vue.component(Button.name,Button)
 
 Vue.config.productionTip = false
-
 new Vue({
   render: h => h(App),
   router,
