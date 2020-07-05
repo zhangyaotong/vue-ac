@@ -16,7 +16,6 @@
             {{cate.name}}
           </li>
         </ul>
-        <!-- cate.id -->
       </div>
       <!-- 右侧 -->
       <div class="rightContainer" v-if="catelists[newIndex]">

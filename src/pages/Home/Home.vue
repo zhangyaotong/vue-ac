@@ -93,7 +93,7 @@
       this.$store.dispatch("getkingKongListAction");
       new BScroll(".nav",{
         scrollX: true,
-        probeType: 3
+        probeType: 2
       })
       // new Swiper(".swiper-container", {
       //   autoplay: true,
