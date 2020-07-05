@@ -14,7 +14,6 @@
           </div>
         </div>
       </div>
-
       <!-- 瀑布 -->
       <div class="container-water-fall">
         <waterfall :col='col' :width="width" :gutterWidth="gutterWidth"  :data="topics"  @loadmore="loadmore"  @scroll="scroll" :isTransition="true">
@@ -98,12 +97,10 @@
 					// }else{
 					//     return;
 					// }
-            let index = that.index++
-
+          let index = that.index++
 					that.loadmore(index);
 				}
 			})
-
     },
     computed: {
       ...mapState({
@@ -118,7 +115,6 @@
       //   return (9*0.5*(document.documentElement.clientWidth/375))  
       // }
     },
-    
     // watch: {
     //   navLists(){
     //     this.$nextTick(() => {
@@ -136,7 +132,6 @@
     // watch:{
 		// 	database(newShuju){
 		// 		this.topics = newShuju[0].topics
-
 		// 	}
     // }
   }
@@ -162,7 +157,6 @@
       position absolute
       left 20px
       top 150px
-
       .swiper-wrapper
         width 710px
         height 540px
@@ -194,22 +188,18 @@
               height 30px
               margin-bottom 40px
               font-size 24px
-
     .container-water-fall
       width 710px
       height 3000px
       margin-left 20px
-      
       .cell-item
         width 335px
         float left
         background #ffffff
         border-radius 20px
         margin 0 20px 20px 0
-        
         img
           width 100%
-          // height 190px
           border-radius 20px 20px 0 0
         .p
           margin 20px 15px 30px 15px
@@ -227,7 +217,6 @@
               margin-right 10px
               display inline-block
             span 
-
               width 24px
               height 24px
               vertical-align middle
@@ -244,8 +233,4 @@
               width 44px
               vertical-align middle
               margin 0 30px 0 10px
-      
-
-
-
  </style>

@@ -121,7 +121,6 @@
 <style lang="stylus" rel="stylesheet/stylus">
   #homeContainer
     width 100%
-    
     .search
       display flex
       margin 13px 0 20px 30px
@@ -129,7 +128,6 @@
       img 
         width 138px
         height 40px
-        
         vertical-align middle
       .inp 
         display block
@@ -151,7 +149,6 @@
         background-color #fff
         border 2px solid red
         border-radius 5px
-
     .nav
       width 100%
       height 48px
@@ -197,7 +194,4 @@
           vertical-align middle
           width 32px
           height 32px
-        
-
-
 </style>

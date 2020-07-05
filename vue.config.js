@@ -9,7 +9,7 @@ const postcss = px2rem({
 
 module.exports = {
   runtimeCompiler: true,
-  lintOnSave: undefined, // 关闭enlint语法检查
+  lintOnSave: false, // 关闭enlint语法检查
   css: { // 添加postcss配置
     loaderOptions: {
       postcss: {
