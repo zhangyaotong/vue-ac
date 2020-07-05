@@ -95,11 +95,6 @@
         scrollX: true,
         probeType: 2
       })
-      // new Swiper(".swiper-container", {
-      //   autoplay: true,
-      //   // speed: 500,
-      //   loop: true
-      // })
     },
     computed: {
           ...mapState({
