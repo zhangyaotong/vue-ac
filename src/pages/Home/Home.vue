@@ -78,17 +78,11 @@
   import {mapState} from 'vuex'
   import {getkingKongList} from '../../api/index'
   export default {
-    
-    
     components:{
       ShopList,
       ImageList,
       PagesList
     },
-    // data(){
-    //   return{
-    //   }
-    // },
     mounted(){
       this.$store.dispatch("getkingKongListAction");
       new BScroll(".nav",{
@@ -97,9 +91,9 @@
       })
     },
     computed: {
-          ...mapState({
-              kingKongLists: state => state.kingKongList
-          })
+      ...mapState({
+        kingKongLists: state => state.kingKongList
+      })
     },
     watch: {
       kingKongLists(){
